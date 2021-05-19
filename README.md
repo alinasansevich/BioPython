@@ -1,5 +1,6 @@
 # BioPython
 #### Here are the apps I develop while learning to use the [BioPython library](https://biopython.org/).
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ***
 * _search_entrez.py_
 
