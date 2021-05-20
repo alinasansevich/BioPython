@@ -16,10 +16,7 @@ Resources:
 
 import urllib
 import argparse
-from Bio import Entrez
-from Bio import SeqIO
-
-Entrez.email = "alinasansevich@gmail.com"     # Always tell NCBI who you are
+import sys
 
 # Create parser
 parser = argparse.ArgumentParser(description='Search the Entrez database with a gene sequence accession number.')
@@ -82,8 +79,21 @@ def print_fasta(accession_num):  # add parameter 'db', that let's the user choos
 
 
 if __name__ == '__main__':
-    print("The Entrez database requires that you provide your email address to make the request.")
-    user_email = input("Please enter your email address: ")
+    # import BioPython, let the user know if it's not installed
+    try:
+        from Bio import Entrez
+        from Bio import SeqIO
+    except (ImportError, ModuleNotFoundError) as error:
+        print(error)
+        print("You need to install the BioPython package before running search_entrez.py")
+        print("You can find the installation instructions here: https://biopython.org/wiki/Download")
+        sys.exit(0)
+  
+    # NCBI requires you provide an email address to respond to a search request
+    print("To make use of NCBI's E-utilities, NCBI requires you to specify your email address with each request.")
+    Entrez.email = input("Please enter your email address: ")
+    
+    # search Entrez
     try:
         print('\n\n')
         genbank = get_genbank_file(args.accession_num)
@@ -97,7 +107,7 @@ if __name__ == '__main__':
             print(fasta)
     except urllib.error.HTTPError:
         print("HTTP Error 400: Bad Request")
-        print("Invalid accession number provided.")
+        print("Invalid accession number provided.") ########## once I add search protein functionality, change message to reflect that.
         
 
 
