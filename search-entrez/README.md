@@ -37,4 +37,4 @@ _Optional arguments:_
 ## License and author info
 
 
-https://dbader.org/blog/write-a-great-readme-for-your-github-project
+continue following &rarr; https://dbader.org/blog/write-a-great-readme-for-your-github-project
