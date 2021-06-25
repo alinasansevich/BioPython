@@ -1,30 +1,42 @@
 # search_entrez.py
 
-This is a CLI program that searches the Entrez database with a sequence (nucleotide for now, I'll add protein searches later) accession number.
-***
-## What your project does
+This is a CLI app that searches the Entrez database with a nucleotide sequence accession number.
 
 
-
-***
-## How to install it
-
-[Installation instructions for Biopython](https://biopython.org/wiki/Download)
-
-Explain this:
-
-    print("To make use of NCBI's E-utilities, NCBI requires you to specify your email address with each request.")
-    Entrez.email = input("Please enter your email address: ")
-
+## Table of contents
+- [search_entrez.py](#search_entrezpy)
+- [Table of contents](#table-of-contents)
+- [Installation](#installation)
+- [Usage](#usage)
+- [TLDR](#tldr)
+- [License](#license)
 
 ***
-## Example usage
 
-    $ python3 search_entrez.py NM_119948.4D
+## Installation
+[(Back to top)](#table-of-contents)
+
+This project was developed using [Biopython 1.78](https://biopython.org/wiki/Download). You'll need to install this library before running the program.
+
+***
+
+## Usage
+[(Back to top)](#table-of-contents)
+
+On the terminal, navigate to the directory where you have `search_entrez.py` and then type or paste the following line:
+
+    $ python3 search_entrez.py <your-accession-number-here>
+
+The program will prompt you to enter a valid email address ([find out why here](https://www.ncbi.nlm.nih.gov/books/NBK25497/)):
+
+    `To make use of NCBI's E-utilities, NCBI requires you to specify your email address with each request.`
+    `Please enter your email address:`
+    
+It will then print to screen the full report for the provided accession number. The app can also print to screen the results in FASTA format, and/or save them in a file (.txt or .fasta). All available options are detailed below:
 
 _Positional arguments:_
 
-accession_n &rarr; Gene sequence accession number &rarr; _EDIT to add protein_
+accession_n &rarr; Gene sequence accession number
 
 _Optional arguments:_
 
@@ -33,8 +45,26 @@ _Optional arguments:_
 -p, --print &rarr; Print sequence in FASTA format in the Terminal<br>
 -s, --save &rarr; Save GenBank full description to file (.txt)
 
+## TLDR
+[(Back to top)](#table-of-contents)
+
+If you are just interested in copy/pasting your sequence in FASTA format from the terminal, execute the following line:
+
+    $ python3 search_entrez.py <your-accession-number-here> -p
+
+If you prefer to save it to file, execute this:
+
+    $ python3 search_entrez.py <your-accession-number-here> -f
+
+It will create a file in your directory named <your-accession-number-here>.fasta
+
+Or you could do both:
+    
+    $ python3 search_entrez.py <your-accession-number-here> -f -p
+
 ***
-## License and author info
-
-
-continue following &rarr; https://dbader.org/blog/write-a-great-readme-for-your-github-project
+    
+## License
+[(Back to top)](#table-of-contents)
+    
+This repository contains content developed by Alina Sansevich and is distributed under the MIT license.<br>
