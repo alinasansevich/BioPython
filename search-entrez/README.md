@@ -17,7 +17,7 @@ This is a CLI app that searches the Entrez database with a nucleotide sequence a
 ## Installation
 [(Back to top)](#table-of-contents)
 
-This project was developed using [Biopython 1.78](https://biopython.org/wiki/Download). You'll need to install this library before running the program.
+This project was developed using [Biopython](https://biopython.org/wiki/Download). You'll need to install this library before running the program.
 
 ***
 
