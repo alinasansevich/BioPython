@@ -1,4 +1,5 @@
 # search_entrez.py
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This is a CLI app that searches the Entrez database with a nucleotide sequence accession number.
 
